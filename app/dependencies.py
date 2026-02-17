@@ -7,7 +7,7 @@ from app.repositories.service_repo import ServiceRepository
 from app.repositories.schedule_repo import ScheduleRepository
 
 
-# Repository providers
+# Dependency injection functions for repositories
 def get_event_history_repository() -> EventHistoryRepository:
     return EventHistoryRepository()
 
@@ -19,8 +19,7 @@ def get_service_repository() -> ServiceRepository:
 def get_schedule_repository() -> ScheduleRepository:
     return ScheduleRepository()
 
-
-# Service providers with dependency injection
+# Dependency injection functions for services
 def get_event_history_service(
     repo: EventHistoryRepository = Depends(get_event_history_repository)
 ) -> EventHistoryService:
