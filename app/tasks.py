@@ -20,7 +20,6 @@ def _is_schedule_due(last_run: datetime | None, interval_seconds: int) -> bool:
 
 
 def run_due_pings_once() -> int:
-	# Create dependencies manually for background task
 	schedule_repo = ScheduleRepository()
 	service_repo = ServiceRepository()
 	event_history_repo = EventHistoryRepository()
